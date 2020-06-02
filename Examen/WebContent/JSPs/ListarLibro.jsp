@@ -21,15 +21,9 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="/TELEFONOSJPA/ListTelefonoServlet?accion=Registrar" >Insertar Telefono</a>
+        <a class="nav-link" href="/Examen/ListTelefonoServlet?accion=Registrar" >Insertar Telefono</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/TELEFONOSJPA/ListTelefonoServlet?accion=Modificar">Modificar Telefono</a>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link" href="/TELEFONOSJPA/ListTelefonoServlet?accion=Eliminar">Eliminar Telefono</a>
-      </li>     
-    </ul>
+      </ul>
      <div class="dropdown">
   <button style="border: none;" class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
    ${usuario}
@@ -37,41 +31,28 @@
   
   <div class="dropdown-menu text-center"  aria-labelledby="dropdownMenuButton" >
   <img alt="" src="../imagenes/login.png" height="100" width="100" align="center">
-  <a class="dropdown-item" href="#">${name}</a>
-      <a class="dropdown-item" href="#">${apellido}</a>
-    <a class="dropdown-item" href="#">${usuario}</a>
-    <a class="dropdown-item" href="#">${nombre}</a>
-<div class="dropdown-divider"></div>
-<form action="/TELEFONOSJPA/CerrarSesionServlet" method="get">		
-		   <input type="submit" id="crear" value="Salir" name="accion"/>
-	</form>
-  </div>
-  </div>
+
 </nav>
 <form action="/TELEFONOSJPA/ListTelefonoServlet"  method="post">
  <input class="btn btn-danger btn block" type="submit" name="accion" value="Listar"> 
- <input id="cedula" name="cedula" type="hidden" value="${nombre}">
+ <input id="nombre" name="nombre" type="text" value="nombre">
  </form>
  	<div >
  		<table class="table table-hover">
  		<thead>
  			<tr>
- 			 <th> ID</th>
-			    <th> Numero</th>
- 				<th> Tipo</th>
-				<th> Operadora </th>
-					<th> Cedula </th>
+ 			 <th> Nombre</th>
+			    <th> ISBN</th>
+ 				<th> Numero Paginas</th>
+				
 				  </tr>
   </thead>  
   <tbody>  
   <c:forEach var="tel" items="${telefono}">  
   <tr>
-  <td>${tel.getCodigo()}</td>
-  	<td>${tel.getNumero()}</td>
- 	<td>${tel.getTipo()}</td>
- 	<td>${tel.getOperadora()}</td> 
- 	 	<td>${tel.cedula.cedula}</td> 
- 
+  <td>${tel.getISBN()}</td>
+  	<td>${tel.getNombre()}</td>
+ 	
   </tr>
  
   </c:forEach>

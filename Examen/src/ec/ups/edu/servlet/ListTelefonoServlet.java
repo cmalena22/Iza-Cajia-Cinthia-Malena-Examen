@@ -10,6 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import ec.ups.edu.dao.DaoFactory;
+import ec.ups.edu.dao.LibroDao;
+import ec.ups.edu.entidades.Libro;
+import ec.ups.edu.jpa.JPADaoFactory;
+
 
 /**
  * Servlet implementation class ListTelefonoServlet
@@ -17,8 +22,11 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/ListTelefonoServlet")
 public class ListTelefonoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-//	  private JPATelefonoDao teldao;
-  //  private TelefonoDao dao;
+	LibroDao dao = DaoFactory.getFactory().getLibroDao();
+	
+	//JDBCTelefonoDAO tel= new JDBCTelefonoDAO();
+	Libro libro=new Libro();
+       
  
     /**
      * @see HttpServlet#HttpServlet()
@@ -36,20 +44,9 @@ public class ListTelefonoServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		String accion=request.getParameter("accion");
 		switch (accion) {		
-		case "Eliminar":
-			System.out.println("shdbsdhfbshfbsfh");
-			  response.sendRedirect("/TELEFONOSJPA/JSPs/EliminarTelefono.jsp");  
-			//request.getRequestDispatcher("../html/index.html").forward(request, response);
-			  break;
-		case "Modificar":
-			System.out.println("shdbsdhfbshfbsfh");
-			  response.sendRedirect("/TELEFONOSJPA/JSPs/ModificarTelefono.jsp");  
-			//request.getRequestDispatcher("../html/index.html").forward(request, response);
-			  break;
-		
 		case "Registrar":
 			System.out.println("shdbsdhfbshfbsfh");
-			  response.sendRedirect("/TELEFONOSJPA/JSPs/RegistraTelefono.jsp");  
+			  response.sendRedirect("/Examen/JSPs/RegistraLibro.jsp");  
 			 
 			//request.getRequestDispatcher("../html/index.html").forward(request, response);
 			  break;
@@ -64,14 +61,12 @@ public class ListTelefonoServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-	/*String cedula=request.getParameter("cedula");
-	System.out.println("dkjfdjkfgbdjkfbsdjfgbsjdfgbsjdfbsjkfgbjdkfhbjdfgbdjfhgbdjfg"+cedula);
-	System.out.println(cedula);
-	List<Telefono>lista=JPADaoFactory.getFactory().getTelefonoDao().finallby(cedula);
+		String nombre=request.getParameter("nombre");
+	List<Libro>lista=JPADaoFactory.getFactory().getLibroDao().finallby(nombre);
 	System.out.println(lista);
 	request.setAttribute("telefono", lista);
-	request.getRequestDispatcher("/JSPs/ListarTelefono.jsp").forward(request, response);
-	*/
+	request.getRequestDispatcher("/JSPs/ListarLibro.jsp").forward(request, response);
+	
 	}
 
 }
