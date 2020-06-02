@@ -70,9 +70,10 @@ public class InsertarLibroServlet extends HttpServlet {
 		libro.setNombre(nombre);
 		libro.setNumpaginas(numpag);
 		
+		
 		dao.create(libro);
 			//request.setAttribute("telefono", modi);
-			request.getRequestDispatcher("/JSPs/RegistraTelefono.jsp").forward(request, response);
+			request.getRequestDispatcher("/JSPs/RegistraLibro.jsp").forward(request, response);
 	}
 		
 }
