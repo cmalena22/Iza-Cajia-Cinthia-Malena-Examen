@@ -1,6 +1,7 @@
 package ec.ups.edu.servlet;
 
 import java.io.IOException;
+
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -9,11 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ec.ups.edu.PatronDao.DaoFactory;
-import ec.ups.edu.PatronDao.TelefonoDao;
-import ec.ups.edu.entidades.Telefono;
-import ec.ups.edu.jpa.JPADaoFactory;
-import ec.ups.edu.jpa.JPATelefonoDao;
 
 /**
  * Servlet implementation class ListTelefonoServlet
@@ -21,15 +17,15 @@ import ec.ups.edu.jpa.JPATelefonoDao;
 @WebServlet("/ListTelefonoServlet")
 public class ListTelefonoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	  private JPATelefonoDao teldao;
-    private TelefonoDao dao;
+//	  private JPATelefonoDao teldao;
+  //  private TelefonoDao dao;
  
     /**
      * @see HttpServlet#HttpServlet()
      */
     public ListTelefonoServlet() {
         super();
-        dao=DaoFactory.getFactory().getTelefonoDao();
+     //   dao=DaoFactory.getFactory().getTelefonoDao();
         // TODO Auto-generated constructor stub
     }
 
@@ -68,14 +64,14 @@ public class ListTelefonoServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-	String cedula=request.getParameter("cedula");
+	/*String cedula=request.getParameter("cedula");
 	System.out.println("dkjfdjkfgbdjkfbsdjfgbsjdfgbsjdfbsjkfgbjdkfhbjdfgbdjfhgbdjfg"+cedula);
 	System.out.println(cedula);
 	List<Telefono>lista=JPADaoFactory.getFactory().getTelefonoDao().finallby(cedula);
 	System.out.println(lista);
 	request.setAttribute("telefono", lista);
 	request.getRequestDispatcher("/JSPs/ListarTelefono.jsp").forward(request, response);
-	
+	*/
 	}
 
 }

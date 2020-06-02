@@ -34,7 +34,7 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
 				<li class="nav-item active"><a class="nav-link"
-					href="/TELEFONOSJPA/InsertarTelefonoServlet?accion=Listar">Listar
+					href="/Examen/InsertarLibroServlet?accion=Listar">Listar
 						Telefono</a></li>
 				
 
@@ -50,7 +50,7 @@
 	<br>
 	<div class="container col-lg-3">
 	<h1>Formulario</h1>
-	<form action="/Examen/InsertarTelefonoServlet" method="post"
+	<form action="/Examen/InsertarLibroServlet" method="post"
 		role="form">
 		<div class="form-group">
 		<label for="numero">Nombre:</label>
@@ -65,7 +65,6 @@
 		
 		</div>
 		
-
 	</form>
 	
 	</div>

@@ -3,6 +3,7 @@ package ec.ups.edu.servlet;
 import java.io.IOException;
 
 
+
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -13,9 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sound.midi.Soundbank;
 
 
-import ec.ups.edu.PatronDao.DaoFactory;
-import ec.ups.edu.PatronDao.TelefonoDao;
-import ec.ups.edu.entidades.Telefono;
 
 /**
  * Servlet implementation class BuscarPorCedulaServlet
@@ -24,10 +22,10 @@ import ec.ups.edu.entidades.Telefono;
 public class BuscarPorCedulaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	 TelefonoDao dao = DaoFactory.getFactory().getTelefonoDao();
+	// TelefonoDao dao = DaoFactory.getFactory().getTelefonoDao();
 	
 	//JDBCTelefonoDAO tel= new JDBCTelefonoDAO();
-	Telefono telefono=new Telefono();
+	//Telefono telefono=new Telefono();
 	
     /**
      * @see HttpServlet#HttpServlet()
@@ -79,7 +77,7 @@ public class BuscarPorCedulaServlet extends HttpServlet {
 		
 		
 		
-		String accion=request.getParameter("accion");
+	/*	String accion=request.getParameter("accion");
 		String dato=request.getParameter("buscar");
 		String correo=request.getParameter("correo");
 		try {
@@ -90,7 +88,7 @@ public class BuscarPorCedulaServlet extends HttpServlet {
 			request.getRequestDispatcher("/JSPs/Publicca.jsp").forward(request, response);			
 			
 		
-		}
+		}*/
 					
 					
 			

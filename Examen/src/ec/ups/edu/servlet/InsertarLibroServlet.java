@@ -19,7 +19,7 @@ import ec.ups.edu.entidades.Libro;
  * Servlet implementation class InsertarTelefonoServlet
  */
 @WebServlet("/InsertarTelefonoServlet")
-public class InsertarTelefonoServlet extends HttpServlet {
+public class InsertarLibroServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	LibroDao dao = DaoFactory.getFactory().getLibroDao();
 	
@@ -29,7 +29,7 @@ public class InsertarTelefonoServlet extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public InsertarTelefonoServlet() {
+    public InsertarLibroServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
