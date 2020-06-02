@@ -1,6 +1,7 @@
 package ec.ups.edu.entidades;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -26,6 +27,16 @@ public class Libro implements Serializable {
 	public Libro() {
 		
 	}
+	
+
+	public Libro(String nombre, String iSBN, int numpaginas, Set<Capitulo> capitulo) {
+		super();
+		this.nombre = nombre;
+		ISBN = iSBN;
+		this.numpaginas = numpaginas;
+		capitulo=new HashSet<Capitulo>();
+	}
+
 
 	public int getCodigo() {
 		return codigo;

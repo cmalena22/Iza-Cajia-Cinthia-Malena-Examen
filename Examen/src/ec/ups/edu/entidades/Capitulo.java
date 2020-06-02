@@ -28,6 +28,16 @@ public class Capitulo implements Serializable {
 	public Capitulo() {
 		
 	}
+	
+
+	public Capitulo(String nombre, String nacionalidad, Libro codigoli, Autor codigoautor) {
+		super();
+		this.nombre = nombre;
+		Nacionalidad = nacionalidad;
+		this.codigoli = codigoli;
+		this.codigoautor = codigoautor;
+	}
+
 
 	public int getCodigo() {
 		return codigo;
