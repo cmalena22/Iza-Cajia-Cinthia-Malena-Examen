@@ -29,7 +29,7 @@ public class Libro implements Serializable {
 	}
 	
 
-	public Libro(String nombre, String iSBN, int numpaginas, Set<Capitulo> capitulo) {
+	public Libro(String nombre, String iSBN, int numpaginas) {
 		super();
 		this.nombre = nombre;
 		ISBN = iSBN;
@@ -74,9 +74,11 @@ public class Libro implements Serializable {
 		return capitulo;
 	}
 
+
 	public void setCapitulo(Set<Capitulo> capitulo) {
 		this.capitulo = capitulo;
 	}
+
 
 	@Override
 	public int hashCode() {

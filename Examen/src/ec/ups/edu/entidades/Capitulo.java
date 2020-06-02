@@ -13,12 +13,13 @@ public class Capitulo implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int codigo;
-	private String nombre;
-	private String Nacionalidad;		
+	private int numero;
+	private String titulo;		
 	@ManyToOne
 	@JoinColumn
 	private Libro codigoli;
-	@OneToOne(cascade = CascadeType.ALL,mappedBy = "codigoautor")
+	@OneToOne
+	@JoinColumn
 	private Autor codigoautor;
 	
 	
@@ -28,16 +29,6 @@ public class Capitulo implements Serializable {
 	public Capitulo() {
 		
 	}
-	
-
-	public Capitulo(String nombre, String nacionalidad, Libro codigoli, Autor codigoautor) {
-		super();
-		this.nombre = nombre;
-		Nacionalidad = nacionalidad;
-		this.codigoli = codigoli;
-		this.codigoautor = codigoautor;
-	}
-
 
 	public int getCodigo() {
 		return codigo;
@@ -47,20 +38,20 @@ public class Capitulo implements Serializable {
 		this.codigo = codigo;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public int getNumero() {
+		return numero;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setNumero(int numero) {
+		this.numero = numero;
 	}
 
-	public String getNacionalidad() {
-		return Nacionalidad;
+	public String getTitulo() {
+		return titulo;
 	}
 
-	public void setNacionalidad(String nacionalidad) {
-		Nacionalidad = nacionalidad;
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
 
 	public Libro getCodigoli() {
@@ -78,12 +69,8 @@ public class Capitulo implements Serializable {
 	public void setCodigoautor(Autor codigoautor) {
 		this.codigoautor = codigoautor;
 	}
-
-	@Override
-	public String toString() {
-		return "Capitulo [codigo=" + codigo + ", nombre=" + nombre + ", Nacionalidad=" + Nacionalidad + ", codigoli="
-				+ codigoli + ", codigoautor=" + codigoautor + "]";
-	}
+	
+	
 
 	@Override
 	public int hashCode() {
@@ -106,5 +93,9 @@ public class Capitulo implements Serializable {
 			return false;
 		return true;
 	}
+
+	
+	
+
    
 }

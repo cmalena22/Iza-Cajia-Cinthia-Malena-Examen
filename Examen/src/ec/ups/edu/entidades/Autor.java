@@ -16,27 +16,24 @@ public class Autor implements Serializable {
 	private String nombre;
 	private String nacionalidad;
 	private static final long serialVersionUID = 1L;
-	@OneToOne
-	@JoinColumn
-	private Autor codigoautor;
+	@OneToOne(cascade = CascadeType.ALL,mappedBy = "codigoautor")
+	private Capitulo codigoautor;
+	
 
 	public Autor() {
 	}
 	
-	
-
-	public Autor(String nombre, String nacionalidad, Autor codigoautor) {
+	public Autor(String nombre, String nacionalidad) {
 		super();
 		this.nombre = nombre;
 		this.nacionalidad = nacionalidad;
-		this.codigoautor = codigoautor;
+		
 	}
-
-
 
 	public int getCodigo() {
 		return codigo;
 	}
+
 
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
@@ -53,16 +50,17 @@ public class Autor implements Serializable {
 	public String getNacionalidad() {
 		return nacionalidad;
 	}
-
 	public void setNacionalidad(String nacionalidad) {
 		this.nacionalidad = nacionalidad;
 	}
 
-	public Autor getCodigoautor() {
+	
+
+	public Capitulo getCodigoautor() {
 		return codigoautor;
 	}
 
-	public void setCodigoautor(Autor codigoautor) {
+	public void setCodigoautor(Capitulo codigoautor) {
 		this.codigoautor = codigoautor;
 	}
 
@@ -88,11 +86,8 @@ public class Autor implements Serializable {
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		return "Autor [codigo=" + codigo + ", nombre=" + nombre + ", nacionalidad=" + nacionalidad + ", codigoautor="
-				+ codigoautor + "]";
-	}
-	
+
+
+
    
 }
